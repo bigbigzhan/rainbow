@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.RainbowEnvironmentMapper">
+    
+    <resultMap type="RainbowEnvironment" id="RainbowEnvironmentResult">
+        <result property="env"    column="env"    />
+        <result property="description"    column="description"    />
+    </resultMap>
+
+    <sql id="selectRainbowEnvironmentVo">
+        select env, description from rainbow_environment
+    </sql>
+
+    <select id="selectRainbowEnvironmentList" parameterType="RainbowEnvironment" resultMap="RainbowEnvironmentResult">
+        <include refid="selectRainbowEnvironmentVo"/>
+        <where>  
+            <if test="env != null  and env != ''"> and env = #{env}</if>
+        </where>
+    </select>
+    
+    <select id="selectRainbowEnvironmentById" parameterType="String" resultMap="RainbowEnvironmentResult">
+        <include refid="selectRainbowEnvironmentVo"/>
+        where env = #{env}
+    </select>
+        
+    <insert id="insertRainbowEnvironment" parameterType="RainbowEnvironment">
+        insert into rainbow_environment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="env != null">env,</if>
+            <if test="description != null and description != ''">description,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="env != null">#{env},</if>
+            <if test="description != null and description != ''">#{description},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRainbowEnvironment" parameterType="RainbowEnvironment">
+        update rainbow_environment
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="description != null and description != ''">description = #{description},</if>
+        </trim>
+        where env = #{env}
+    </update>
+
+    <delete id="deleteRainbowEnvironmentById" parameterType="String">
+        delete from rainbow_environment where env = #{env}
+    </delete>
+
+    <delete id="deleteRainbowEnvironmentByIds" parameterType="String">
+        delete from rainbow_environment where env in 
+        <foreach item="env" collection="array" open="(" separator="," close=")">
+            #{env}
+        </foreach>
+    </delete>
+
+</mapper>

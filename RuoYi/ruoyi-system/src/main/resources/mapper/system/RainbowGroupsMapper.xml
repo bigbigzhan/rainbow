@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.RainbowGroupsMapper">
+    
+    <resultMap type="RainbowGroups" id="RainbowGroupsResult">
+        <result property="id"    column="id"    />
+        <result property="env"    column="env"    />
+        <result property="appName"    column="app_name"    />
+        <result property="groupName"    column="group_name"    />
+        <result property="groupDesc"    column="group_desc"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="createUser"    column="create_user"    />
+        <result property="updateUser"    column="update_user"    />
+    </resultMap>
+
+    <sql id="selectRainbowGroupsVo">
+        select id, env, app_name, group_name, group_desc, create_time, update_time, create_user, update_user from rainbow_groups
+    </sql>
+
+    <select id="selectRainbowGroupsList" parameterType="RainbowGroups" resultMap="RainbowGroupsResult">
+        <include refid="selectRainbowGroupsVo"/>
+        <where>  
+            <if test="env != null  and env != ''"> and env = #{env}</if>
+            <if test="appName != null  and appName != ''"> and app_name like concat('%', #{appName}, '%')</if>
+            <if test="groupName != null  and groupName != ''"> and group_name like concat('%', #{groupName}, '%')</if>
+            <if test="groupDesc != null  and groupDesc != ''"> and group_desc = #{groupDesc}</if>
+            <if test="createUser != null  and createUser != ''"> and create_user = #{createUser}</if>
+            <if test="updateUser != null  and updateUser != ''"> and update_user = #{updateUser}</if>
+        </where>
+    </select>
+    
+    <select id="selectRainbowGroupsById" parameterType="Long" resultMap="RainbowGroupsResult">
+        <include refid="selectRainbowGroupsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertRainbowGroups" parameterType="RainbowGroups" useGeneratedKeys="true" keyProperty="id">
+        insert into rainbow_groups
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="env != null and env != ''">env,</if>
+            <if test="appName != null and appName != ''">app_name,</if>
+            <if test="groupName != null and groupName != ''">group_name,</if>
+            <if test="groupDesc != null and groupDesc != ''">group_desc,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="createUser != null">create_user,</if>
+            <if test="updateUser != null">update_user,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="env != null and env != ''">#{env},</if>
+            <if test="appName != null and appName != ''">#{appName},</if>
+            <if test="groupName != null and groupName != ''">#{groupName},</if>
+            <if test="groupDesc != null and groupDesc != ''">#{groupDesc},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="createUser != null">#{createUser},</if>
+            <if test="updateUser != null">#{updateUser},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRainbowGroups" parameterType="RainbowGroups">
+        update rainbow_groups
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="env != null and env != ''">env = #{env},</if>
+            <if test="appName != null and appName != ''">app_name = #{appName},</if>
+            <if test="groupName != null and groupName != ''">group_name = #{groupName},</if>
+            <if test="groupDesc != null and groupDesc != ''">group_desc = #{groupDesc},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="createUser != null">create_user = #{createUser},</if>
+            <if test="updateUser != null">update_user = #{updateUser},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteRainbowGroupsById" parameterType="Long">
+        delete from rainbow_groups where id = #{id}
+    </delete>
+
+    <delete id="deleteRainbowGroupsByIds" parameterType="String">
+        delete from rainbow_groups where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="queryGrpupIds" resultType="Long">
+        select id from rainbow_groups where  group_name = #{groupNames} and env = #{envName}
+        and group_name in
+        <foreach collection="groupName" item = "name" open="(" separator="," close=")">
+            #{name}
+        </foreach>
+    </select>
+
+</mapper>

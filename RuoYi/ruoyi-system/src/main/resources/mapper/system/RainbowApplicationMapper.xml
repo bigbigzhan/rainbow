@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.RainbowApplicationMapper">
+    
+    <resultMap type="RainbowApplication" id="RainbowApplicationResult">
+        <result property="appName"    column="app_name"    />
+        <result property="description"    column="description"    />
+    </resultMap>
+
+    <sql id="selectRainbowApplicationVo">
+        select app_name, description from rainbow_application
+    </sql>
+
+    <select id="selectRainbowApplicationList" parameterType="RainbowApplication" resultMap="RainbowApplicationResult">
+        <include refid="selectRainbowApplicationVo"/>
+        <where>  
+            <if test="appName != null  and appName != ''"> and app_name = #{appName}</if>
+        </where>
+    </select>
+    
+    <select id="selectRainbowApplicationById" parameterType="String" resultMap="RainbowApplicationResult">
+        <include refid="selectRainbowApplicationVo"/>
+        where app_name = #{appName}
+    </select>
+        
+    <insert id="insertRainbowApplication" parameterType="RainbowApplication">
+        insert into rainbow_application
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="appName != null and appName != ''">app_name,</if>
+            <if test="description != null and description != ''">description,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="appName != null and appName != ''">#{appName},</if>
+            <if test="description != null and description != ''">#{description},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRainbowApplication" parameterType="RainbowApplication">
+        update rainbow_application
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="description != null and description != ''">description = #{description},</if>
+        </trim>
+        where app_name = #{appName}
+    </update>
+
+    <delete id="deleteRainbowApplicationById" parameterType="String">
+        delete from rainbow_application where app_name = #{appName}
+    </delete>
+
+    <delete id="deleteRainbowApplicationByIds" parameterType="String">
+        delete from rainbow_application where app_name in 
+        <foreach item="appName" collection="array" open="(" separator="," close=")">
+            #{appName}
+        </foreach>
+    </delete>
+
+</mapper>

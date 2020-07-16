@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>若依介绍</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}" rel="stylesheet"/>
+    <link href="../static/css/main/animate.min.css" th:href="@{/css/main/animate.min.css}" rel="stylesheet"/>
+    <link href="../static/css/main/style.min862f.css" th:href="@{/css/main/style.min862f.css}" rel="stylesheet"/>
+</head>
+
+<body class="gray-bg">
+    <div class="row  border-bottom white-bg dashboard-header">
+        <div class="col-sm-5">
+            <h2>rainbow分布式配置中心服务端</h2>
+			<p>rainbow分布式配置中心简单省心</p>
+            <p>rainbow分布式配置中心在实现方面参考了携程的apollo、随行付的ConfigKeeper.这两个都是业界内很棒的分布式配置中心.<b>那为什么要造一个轮子呢?</b>这些开源的分布式中心都有一个缺点就是<b>缺陷控制方面做的不是很好</b>
+                因此rainbow就此诞生了,因为平时工作较忙（还有我的前端比较差,完全没有美感- -#)所以服务端采用了开源的权限控制系统(rouyi).rainbow采用netty作为服务端客户端通信框架.注定高效 ^_^.
+                <br>
+                <b>想要参与开源项目的小伙伴,请大胆的参与进来吧rainbow特别适合你的一个开源项目</b>
+                <br>
+                因为项目源码简单已读,目前完成度并不高有大量的工作需要做.包含但并不仅限于以下
+                <br>
+                1.因为采用的是开源的权限系统,可以快速搭建一个后台.但是页面我觉得跟丑陋.需要重构前端
+                <br>
+                2.这个大而全的后端系统是很多代码/功能用不上,清洁代码
+                <br>
+                3.推送客户端变更消息的时候可能会失败,因此需要加上一个定时轮训通知的功能.
+                <br>
+                4.一般一个公司的后台系统都是在内网访问的,但是这个大而全的开源权限系统还有Shrio这样的框架.让rainbow项目感到笨重.可以去掉.
+                <br>
+                5.....等等
+
+            </p>
+        </div>
+		<div class="col-sm-4">
+		</div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="row">
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-4">
+			</div>
+			<div class="col-sm-4">
+			</div>
+        </div>
+    </div>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/ajax/libs/layer/layer.min.js}"></script>
+    <script type="text/javascript">
+	    $('#pay-qrcode').click(function(){
+	        var html=$(this).html();
+	        parent.layer.open({
+	            title: false,
+	            type: 1,
+	            closeBtn:false,
+	            shadeClose:true,
+	            area: ['600px', 'auto'],
+	            content: html
+	        });
+	    });
+    </script>
+</body>
+</html>

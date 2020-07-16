@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('修改rainbow配置组')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-groups-edit" th:object="${rainbowGroups}">
+            <input name="id" th:field="*{id}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">环境名称：</label>
+                <div class="col-sm-9">
+                    <select  id="env" required class="form-control" name="env">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">应用名称：</label>
+                <div class="col-sm-8">
+                    <select  id="appName" required class="form-control" name="appName">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">组名称：</label>
+                <div class="col-sm-8">
+                    <input name="groupName" th:field="*{groupName}" class="form-control" type="text" required>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label is-required">组描述：</label>
+                <div class="col-sm-8">
+                    <input name="groupDesc" th:field="*{groupDesc}" class="form-control" type="text" required>
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/groups";
+
+        var url = ctx + "system/environment/list"
+        var appUrl = ctx + "system/application/list"
+        showSelEnvName(url);
+        showSelAppName(appUrl);
+        $("#form-groups-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-groups-edit').serialize());
+            }
+        }
+
+        function showSelEnvName(url){
+            $.ajax({
+                "type" : 'post',
+                "url":url,
+                "dataType" : "json",
+                "success" : function(data) {
+                    var depart_list = data.rows;
+                    var opts = "";
+                    for( var depart_index = 0 ; depart_index < depart_list.length; depart_index++ ){
+                        var depart = depart_list[depart_index]
+                        opts += "<option value='"+depart.env+"'>"+ depart.env + '(' + depart.description + ')' +"</option>";
+                    }
+// 查询界面
+                    $("#env").append(opts);
+                    $("#env").selectpicker("refresh");
+                }
+            });
+        }
+
+        function showSelAppName(url){
+            $.ajax({
+                "type" : 'post',
+                "url":url,
+                "dataType" : "json",
+                "success" : function(data) {
+                    var depart_list = data.rows;
+                    var opts = "";
+                    for( var depart_index = 0 ; depart_index < depart_list.length; depart_index++ ){
+                        var depart = depart_list[depart_index]
+                        opts += "<option value='"+depart.appName+"'>"+ depart.appName + '(' + depart.description + ')' +"</option>";
+                    }
+// 查询界面
+                    $("#appName").append(opts);
+                    $("#appName").selectpicker("refresh");
+                }
+            });
+        }
+    </script>
+</body>
+</html>
