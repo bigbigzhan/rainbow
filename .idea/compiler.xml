@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rainbow-server-system" />
+        <module name="rainbow-server-framework" />
+        <module name="rainbow-server-admin" />
+        <module name="rainbow-server-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="rainbow-server" target="1.8" />
+      <module name="rainbow-server-admin" target="1.8" />
+      <module name="rainbow-server-common" target="1.8" />
+      <module name="rainbow-server-framework" target="1.8" />
+      <module name="rainbow-server-system" target="1.8" />
+      <module name="ruoyi-common" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

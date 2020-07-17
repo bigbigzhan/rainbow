@@ -167,48 +167,32 @@
 				<version>${fastjson.version}</version>
 			</dependency>
             
-            <!-- 定时任务-->
-<!--			<dependency>-->
-<!--				<groupId>com.ruoyi</groupId>-->
-<!--				<artifactId>ruoyi-quartz</artifactId>-->
-<!--				<version>${ruoyi.version}</version>-->
-<!--			</dependency>-->
-<!--	-->
-<!--			&lt;!&ndash; 代码生成&ndash;&gt;-->
-<!--			<dependency>-->
-<!--				<groupId>com.ruoyi</groupId>-->
-<!--				<artifactId>ruoyi-generator</artifactId>-->
-<!--				<version>${ruoyi.version}</version>-->
-<!--			</dependency>-->
-			
 			<!-- 核心模块-->
 			<dependency>
 				<groupId>com.github.raibow</groupId>
-				<artifactId>ruoyi-framework</artifactId>
+				<artifactId>rainbow-server-framework</artifactId>
 			</dependency>
 			
 	        <!-- 系统模块-->
 			<dependency>
 				<groupId>com.github.raibow</groupId>
-				<artifactId>ruoyi-system</artifactId>
+				<artifactId>rainbow-server-system</artifactId>
 			</dependency>
 			
 			<!-- 通用工具-->
 	        <dependency>
 				<groupId>com.github.raibow</groupId>
-	            <artifactId>ruoyi-common</artifactId>
+	            <artifactId>rainbow-server-common</artifactId>
 	        </dependency>
 	        
         </dependencies>
     </dependencyManagement>
 
     <modules>
-	    <module>ruoyi-admin</module>
-		<module>ruoyi-framework</module>
-		<module>ruoyi-system</module>
-<!--		<module>ruoyi-quartz</module>-->
-<!--		<module>ruoyi-generator</module>-->
-        <module>ruoyi-common</module>
+	    <module>rainbow-server-admin</module>
+		<module>rainbow-server-framework</module>
+		<module>rainbow-server-system</module>
+        <module>rainbow-server-common</module>
 	</modules>
     <packaging>pom</packaging>
 
