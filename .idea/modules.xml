@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/rainbow.iml" filepath="$PROJECT_DIR$/.idea/rainbow.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RuoYi/rainbow-server.iml" filepath="$PROJECT_DIR$/RuoYi/rainbow-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RuoYi/rainbow-server-admin/rainbow-server-admin.iml" filepath="$PROJECT_DIR$/RuoYi/rainbow-server-admin/rainbow-server-admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RuoYi/rainbow-server-common/rainbow-server-common.iml" filepath="$PROJECT_DIR$/RuoYi/rainbow-server-common/rainbow-server-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RuoYi/rainbow-server-framework/rainbow-server-framework.iml" filepath="$PROJECT_DIR$/RuoYi/rainbow-server-framework/rainbow-server-framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RuoYi/rainbow-server-system/rainbow-server-system.iml" filepath="$PROJECT_DIR$/RuoYi/rainbow-server-system/rainbow-server-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rainbow-server/rainbow-server.iml" filepath="$PROJECT_DIR$/rainbow-server/rainbow-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rainbow-server/rainbow-server-admin/rainbow-server-admin.iml" filepath="$PROJECT_DIR$/rainbow-server/rainbow-server-admin/rainbow-server-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rainbow-server/rainbow-server-common/rainbow-server-common.iml" filepath="$PROJECT_DIR$/rainbow-server/rainbow-server-common/rainbow-server-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rainbow-server/rainbow-server-framework/rainbow-server-framework.iml" filepath="$PROJECT_DIR$/rainbow-server/rainbow-server-framework/rainbow-server-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rainbow-server/rainbow-server-system/rainbow-server-system.iml" filepath="$PROJECT_DIR$/rainbow-server/rainbow-server-system/rainbow-server-system.iml" />
     </modules>
   </component>
 </project>
