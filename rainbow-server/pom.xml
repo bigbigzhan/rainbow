@@ -3,12 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
-    <groupId>com.github.raibow</groupId>
+
+	<groupId>com.github.bigbigzhan</groupId>
     <artifactId>rainbow-server</artifactId>
     <version>${rainbow.version}</version>
-
-    <name>ruoyi</name>
+    <name>rainbow-server</name>
     <description>rainbow</description>
     
     <properties>
@@ -169,19 +168,19 @@
             
 			<!-- 核心模块-->
 			<dependency>
-				<groupId>com.github.raibow</groupId>
+				<groupId>com.github.bigbigzhan</groupId>
 				<artifactId>rainbow-server-framework</artifactId>
 			</dependency>
 			
 	        <!-- 系统模块-->
 			<dependency>
-				<groupId>com.github.raibow</groupId>
+				<groupId>com.github.bigbigzhan</groupId>
 				<artifactId>rainbow-server-system</artifactId>
 			</dependency>
 			
 			<!-- 通用工具-->
 	        <dependency>
-				<groupId>com.github.raibow</groupId>
+				<groupId>com.github.bigbigzhan</groupId>
 	            <artifactId>rainbow-server-common</artifactId>
 	        </dependency>
 	        
