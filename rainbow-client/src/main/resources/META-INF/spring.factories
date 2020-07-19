@@ -1,0 +1,3 @@
+org.springframework.context.ApplicationContextInitializer=com.github.rainbow.initialization.ClientConfigPropertisInitialization,com.github.rainbow.initialization.RainbowEnvConfigApplicationInitializer
+
+org.springframework.boot.env.EnvironmentPostProcessor=com.github.rainbow.initialization.RainbowEnvConfigApplicationInitializer
