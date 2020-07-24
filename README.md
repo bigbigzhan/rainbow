@@ -22,7 +22,7 @@ rainbow分布式配置中心在实现方面参考了携程的apollo、随行付�
        <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/login.png"/></td>
        <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/homepage.png"/></td>
     </tr>
-</table>>   
+</table>
  
  
 
