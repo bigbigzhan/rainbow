@@ -36,8 +36,8 @@ public class NettyServerHandler extends HeartbeatHandler {
         JSONObject object = JSON.parseObject(content);
         String groupsStr = object.getString("groupsName");
         String env = object.getString("env");
-        String app = object.getString("app");
-        Assert.notNull(app,"app must not null");
+        String app = Constant.APP_DEFAULT_NAME;
+        //Assert.notNull(app,"app must not null");
         Assert.notNull(env,"env must not null");
         Assert.notNull(groupsStr,"groups must not null");
 
