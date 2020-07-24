@@ -18,9 +18,6 @@ rainbow分布式配置中心在实现方面参考了携程的apollo、随行付�
 
 ## 演示图
 
-<table>
-    <tr>
-        <td><img src="http://github.com/bibigzhan/rainbow/raw/master/images-folder/login.png"/></td>
-    </tr>
-   
-</table>
+ ![image](/images-folder/login.png)
+ ![image](/images-folder/homepage.png)
+
