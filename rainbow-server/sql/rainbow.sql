@@ -249,7 +249,7 @@ INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, url, target, men
 INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, url, target, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark) VALUES (2047, 'rainbow配置组修改', 2044, 3, '#', '', 'F', '0', 'system:groups:edit', '#', 'admin', '2018-03-01 00:00:00', 'ry', '2018-03-01 00:00:00', '');
 INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, url, target, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark) VALUES (2048, 'rainbow配置组删除', 2044, 4, '#', '', 'F', '0', 'system:groups:remove', '#', 'admin', '2018-03-01 00:00:00', 'ry', '2018-03-01 00:00:00', '');
 INSERT INTO sys_menu (menu_id, menu_name, parent_id, order_num, url, target, menu_type, visible, perms, icon, create_by, create_time, update_by, update_time, remark) VALUES (2049, 'rainbow配置组导出', 2044, 5, '#', '', 'F', '0', 'system:groups:export', '#', 'admin', '2018-03-01 00:00:00', 'ry', '2018-03-01 00:00:00', '');
-
+DELETE FROM sys_menu WHERE menu_id IN (2026,2027,2028,2029,2030,2031);
 -- ----------------------------
 -- 6、用户和角色关联表  用户N-1角色
 -- ----------------------------

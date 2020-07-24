@@ -22,7 +22,24 @@ rainbow分布式配置中心在实现方面参考了携程的apollo、随行付�
        <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/login.png"/></td>
        <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/homepage.png"/></td>
     </tr>
+    <tr>
+           <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/env.png"/></td>
+           <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/group.png"/></td>
+    </tr>
+    <tr>
+           <td><img src="https://github.com/bigbigzhan/rainbow/raw/master/rainbow-server/images-folder/cells.png"/></td>
+    </tr>
 </table>
  
  
+ ##快速使用
+ 
+ 客户端引入pom
+ ```xml
+     <dependency>
+             <groupId>com.github.bigbigzhan</groupId>
+             <artifactId>rainbow-client</artifactId>
+             <version>1.0.0.Final</version>
+     </dependency>
+ ```
 
