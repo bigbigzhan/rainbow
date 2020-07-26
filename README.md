@@ -29,10 +29,9 @@ rainbow分布式配置中心在实现方面参考了携程的apollo、随行付�
 </table>
  
  
- ##快速使用
+ 快速使用  
  1.搭建服务端rainbow-server是服务端代码执行rainbow-server/sql并修改application-druid.yml数据库链接地址即可成功启动
- 
- 
+ ****
  2.客户端引入pom
  ```xml
      <dependency>
@@ -41,17 +40,20 @@ rainbow分布式配置中心在实现方面参考了携程的apollo、随行付�
              <version>1.0.0.Final</version>
      </dependency>
  ```
+****
 3.客户端启动类添加注解
 ```java
 @EnableRainbowConfigCenter
 ```
-4.在配置文件中配置已下配置项
+****
+
+4.在配置文件中配置已下配置项  
    
-  #####服务端地址 
-  rainbow.address=127.0.0.1:9009
-  #####环境信息
-  rainbow.env=dev
-  #####引用的配置组组
-  rainbow.groupsName=abcd,common
-  #####缓存文件地址
+ 配置服务端地址   
+  rainbow.address=127.0.0.1:9009  
+ 配置环境信息  
+  rainbow.env=dev  
+ 配置引用的配置组  
+  rainbow.groupsName=eureka-config,redis-config,common  
+ 配置缓存文件地址  
   rainbow.config.local.path=C://code
